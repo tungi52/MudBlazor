@@ -1,0 +1,24 @@
+﻿@namespace MudBlazor.Docs.Examples
+
+<MudPaper Class="demo-drawer">
+    <MudDrawer @bind-Open="@open" Fixed="false" Elevation="1" Variant="@DrawerVariant.Mini">
+        <MudNavMenu>
+            <MudNavLink Match="NavLinkMatch.All" Icon="@Icons.Filled.Store">Store</MudNavLink>
+            <MudNavLink Match="NavLinkMatch.All" Icon="@Icons.Filled.LibraryBooks">Library</MudNavLink>
+            <MudNavLink Match="NavLinkMatch.All" Icon="@Icons.Filled.Group">Community</MudNavLink>
+        </MudNavMenu>
+    </MudDrawer>
+    <div class="mud-paper-content">
+        <MudButton OnClick="@TogglDrawer">Toggle</MudButton>
+    </div>
+</MudPaper>
+
+@code
+{
+    bool open = false;
+
+    void TogglDrawer()
+    {
+        open = !open;
+    }
+}

@@ -63,6 +63,42 @@
             width: calc(100% - var(--mud-drawer-width-right));
         }
     }
+
+    &-mini {
+        &-left {
+            margin-left: var(--mud-drawer-width);
+        }
+
+        &-right {
+            margin-right: var(--mud-drawer-width);
+        }
+
+        &-left#{&}-right {
+            width: calc(100% - 2 * var(--mud-drawer-width));
+        }
+
+        &-left:not(&-right), &-right:not(&-left) {
+            width: calc(100% - var(--mud-drawer-width));
+        }
+    }
+}
+
+.mud-appbar-drawer-close-mini {
+    &-left {
+        margin-left: var(--mud-drawer-mini-width);
+    }
+
+    &-right {
+        margin-right: var(--mud-drawer-mini-width);
+    }
+
+    &-left#{&}-right {
+        width: calc(100% - 2 * var(--mud-drawer-mini-width));
+    }
+
+    &-left:not(&-right), &-right:not(&-left) {
+        width: calc(100% - var(--mud-drawer-mini-width));
+    }
 }
 
 .mud-appbar-fixed {
