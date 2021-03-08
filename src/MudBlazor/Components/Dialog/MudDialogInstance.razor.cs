@@ -41,10 +41,16 @@ namespace MudBlazor
         private bool FullScreen { get; set; }
         private bool FullWidth { get; set; }
 
-
-        protected override void OnInitialized()
+        public override async Task SetParametersAsync(ParameterView parameters)
         {
-            ConfigureInstance();
+            var configure = parameters.TryGetValue(nameof(Id), out Guid id) && id != Id;
+            
+            await base.SetParametersAsync(parameters);
+
+            if (configure)
+            {
+                ConfigureInstance();
+            }
         }
 
         public void SetOptions(DialogOptions options)
